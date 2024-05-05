@@ -1,9 +1,11 @@
-package com.clicktic.wsgamechess.Presentation.Response;
+package com.clicktic.wsgamechess.Infrastructure.Response;
 
 import Domain.Figure.Figure;
+import lombok.Getter;
 
 import java.util.Optional;
 
+@Getter
 public class FigureJsonMapper {
     private final String type;
     private final String color;
@@ -16,13 +18,5 @@ public class FigureJsonMapper {
             this.color = null;
             this.type = null;
         }
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getType() {
-        return type;
     }
 }

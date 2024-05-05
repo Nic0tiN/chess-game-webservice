@@ -1,12 +1,14 @@
-package com.clicktic.wsgamechess.Presentation.Response;
+package com.clicktic.wsgamechess.Infrastructure.Response;
 
 import Domain.Board.Exception.OutOfBoardException;
 import Domain.Board.Position;
 import Domain.Game;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class BoardJsonMapper {
     private final CellJsonMapper[] board;
 
@@ -25,9 +27,5 @@ public class BoardJsonMapper {
         }
 
         this.board = jsonResult.toArray(results);
-    }
-
-    public CellJsonMapper[] getBoard() {
-        return board;
     }
 }

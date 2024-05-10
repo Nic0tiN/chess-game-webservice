@@ -1,4 +1,4 @@
-package com.clicktic.wsgamechess.Presentation.Command;
+package com.clicktic.wsgamechess.Application.Command;
 
 public class MoveCommand {
     public final String from;

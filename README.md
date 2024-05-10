@@ -3,10 +3,24 @@ Expose l'API webservice du moteur d'échec [GameChess](https://github.com/Nic0ti
 
 Une seule ressource `Board` est présentée au format `json`.
 Deux endpoints sont disponibles :
-- `/start` initialise l'instance de jeu ou réinitialise l'instance existante.
+- `/init` initialise l'instance de jeu ou réinitialise l'instance existante.
+- `/start` réinitialise l'instance de jeu et nomme les joueurs 
 - `/play` reçoit le déplacement de `from` à `to`.
 
 # Documentation API
+## Endpoint : /init
+### Requête HTTP
+`GET http://localhost:8080/init`
+
+### Paramètres de la requête
+Aucun paramètre
+
+### Corps de la requête
+Le corps doit être vide
+
+### Corps de la réponse
+Si la requête aboutit, le corps de la réponse contient une instance de `Game`.
+
 ## Endpoint : /start
 ### Requête HTTP
 `GET http://localhost:8080/start?p1={player1}&p2={player2}`
@@ -32,7 +46,7 @@ Il n'existe aucun paramètre de la requête.
 
 ### Corps de la requête
 Représentation JSON
-```json
+```json lines
 {
   "from": string,
   "to": string
@@ -50,7 +64,7 @@ En cas d'échec, l'API retourne une erreur 500 et la propriété `message` conti
 
 ## Ressource : Game
 
-```json
+```json lines
 {
   "board": [
     {
@@ -88,7 +102,7 @@ Pour la propriété `type`, ça peut être une des valeurs suivantes :
 - `KING`
 - `KNIGHT`
 
-```json
+```json lines
 {
   "color": string,
   "type": string

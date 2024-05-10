@@ -1,5 +1,5 @@
 # Game Chess WebService
-Expose l'API webservice du moteur d'échec [GameChess](https://github.com/Nic0tiN/chess-gameInstance)
+Expose l'API webservice du moteur d'échec [GameChess](https://github.com/Nic0tiN/chess-game)
 
 Une seule ressource `Board` est présentée au format `json`.
 Deux endpoints sont disponibles :

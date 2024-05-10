@@ -4,11 +4,10 @@ import Domain.Board.Exception.OutOfBoardException;
 import Domain.Exception.WrongMoveException;
 import Domain.Game;
 import com.clicktic.wsgamechess.Application.Command.MoveCommand;
-import com.clicktic.wsgamechess.Infrastructure.Response.BoardJsonMapper;
+import com.clicktic.wsgamechess.Application.GameRepository;
 import com.clicktic.wsgamechess.Application.Service.GameService;
 import com.clicktic.wsgamechess.GameChessWsApplication;
-import com.clicktic.wsgamechess.Application.GameRepository;
-import jakarta.annotation.security.PermitAll;
+import com.clicktic.wsgamechess.Infrastructure.Response.BoardJsonMapper;
 import jakarta.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -16,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials="true")
-@PermitAll
 public class GameController {
     private static final Log LOG = LogFactory.getLog(GameChessWsApplication.class);
     private GameService gameService = null;
